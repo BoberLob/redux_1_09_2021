@@ -4,9 +4,23 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
   const cash = useSelector(state => state.cash.cash);
-  console.log('cash', cash);
+  const customers = useSelector(state => state.customers.customers)
+
+  console.log('cash', cash, "customers", customers);
+
   const addCash = (cash) => { dispatch({ type: "ADD_CASH", payload: cash }) }
   const getCash = (cash) => { dispatch({ type: "GET_CASH", payload: cash }) }
+
+  const addCustomer = (name) => {
+    const customer = {
+      name,
+      id: Date.now(),
+    }
+    dispatch({ type: "ADD_CUSTOMER", payload: customer })
+  }
+  const removeCustomer = (customer) => {
+    dispatch({ type: "GET_CUSTOMERS", payload: customer.id })
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -15,9 +29,25 @@ function App() {
         <div style={{ display: "flex" }}>
           <button onClick={() => addCash(Number(prompt()))}>Пополнить счет</button>
           <button onClick={() => getCash(Number(prompt()))}>Снять со  счета</button>
+          <button onClick={() => addCustomer(prompt())}>Add client</button>
+
         </div>
       </header>
-    </div>
+      <main className="App-header">
+        {customers.length > 0 ?
+          <div>
+            {customers
+              .map(customer => <div onClick={() => removeCustomer(customer)}
+                style={{ fontSize: "2rem", border: 'solid 1px white', padding: "10px", marginTop: 5, color: "red" }} >
+                {customer.name}
+              </div>)}
+          </div>
+          :
+          <div style={{ fontSize: "2rem", marginTop: 20 }}>
+            no clients found!</div>
+        }
+      </main >
+    </div >
   );
 }
 

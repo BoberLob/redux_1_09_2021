@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { store } from './store'
+import { store } from './redux'
 import { Provider } from 'react-redux';
 
 // 1. Инсталируем два пакета redux and react - redux
