@@ -1,14 +1,15 @@
 import {
-    ADD_CASH,
-    GET_CASH,
-    ADD_CUSTOMER,
-    GET_CUSTOMERS,
-    ADD_MANY_CUSTOMERS
+    INCREMENT,
+    ASYNC_INCREMENT,
+    DECREMENT,
+    SET_USERS,
+    FETCH_USERS,
+    ASYNC_DECREMENT
 } from './types'
 
-export const addCashAction = (payload) => ({ type: ADD_CASH, payload })
-export const getCashAction = (payload) => ({ type: GET_CASH, payload })
-export const addCustomerAction = (payload) => ({ type: ADD_CUSTOMER, payload });
-export const removeCustomerAction = (payload) => ({ type: GET_CUSTOMERS, payload })
-
-export const addManyCustomerAction = (payload) => ({ type: ADD_MANY_CUSTOMERS, payload })
+export const incrementCreator = () => ({ type: INCREMENT })
+export const asyncIncrementCreator = () => ({ type: ASYNC_INCREMENT })
+export const decrementCreator = () => ({ type: DECREMENT })
+export const asyncDecrementCreator = () => ({ type: ASYNC_DECREMENT })
+export const setUsers = (payload) => ({ type: SET_USERS, payload })
+export const fetchUsers = () => ({ type: FETCH_USERS })

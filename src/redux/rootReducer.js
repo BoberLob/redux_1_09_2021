@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { cashReducer } from './cashReducer';
-import { customerReducer } from './customerReducer';
+import { countReducer } from './countReducer';
+import { userReducer } from './userReducer';
 
 export const rootReducer = combineReducers({
-    cash: cashReducer,
-    customers: customerReducer,
+    countReducer,
+    userReducer,
 });

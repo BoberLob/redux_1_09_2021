@@ -1,7 +1,7 @@
-export const ADD_CASH = "ADD_CASH";
-export const GET_CASH = "GET_CASH";
-export const ADD_CUSTOMER = "ADD_CUSTOMER";
-export const GET_CUSTOMERS = "GET_CUSTOMERS";
+export const INCREMENT = "INCREMENT ";
+export const DECREMENT = "DECREMENT";
+export const SET_USERS = "SET_USERS ";
+export const FETCH_USERS = "FETCH_USERS ";
+export const ASYNC_INCREMENT = "ASYNC_INCREMENT ";
+export const ASYNC_DECREMENT = "ASYNC_DECREMENT ";
 
-
-export const ADD_MANY_CUSTOMERS = "ADD_MANY_CUSTOMERS"
