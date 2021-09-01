@@ -6,7 +6,7 @@ const fetchUsersFromAPI = () =>
 
 function* fetchUserWolker() {
     const data = yield call(fetchUsersFromAPI)
-    const json = yield call(() => new Promise(res => res(data.json())))
+    const json = yield call(res => res(data.json())
     yield put(setUsers(json))
 }
 
