@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css';
+import { addCashAction, addCustomerAction, getCashAction, removeCustomerAction } from './redux/actions';
 
 function App() {
   const dispatch = useDispatch();
@@ -8,18 +9,18 @@ function App() {
 
   console.log('cash', cash, "customers", customers);
 
-  const addCash = (cash) => { dispatch({ type: "ADD_CASH", payload: cash }) }
-  const getCash = (cash) => { dispatch({ type: "GET_CASH", payload: cash }) }
+  const addCash = (cash) => { dispatch(addCashAction(cash)) }
+  const getCash = (cash) => { dispatch(getCashAction(cash)) }
 
   const addCustomer = (name) => {
     const customer = {
       name,
       id: Date.now(),
     }
-    dispatch({ type: "ADD_CUSTOMER", payload: customer })
+    dispatch(addCustomerAction(customer))
   }
   const removeCustomer = (customer) => {
-    dispatch({ type: "GET_CUSTOMERS", payload: customer.id })
+    dispatch(removeCustomerAction(customer.id))
   }
   return (
     <div className="App">
@@ -37,7 +38,7 @@ function App() {
         {customers.length > 0 ?
           <div>
             {customers
-              .map(customer => <div onClick={() => removeCustomer(customer)}
+              .map(customer => <div key={customer.id} onClick={() => removeCustomer(customer)}
                 style={{ fontSize: "2rem", border: 'solid 1px white', padding: "10px", marginTop: 5, color: "red" }} >
                 {customer.name}
               </div>)}
