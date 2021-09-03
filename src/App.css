@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+/* style={{ fontSize: "2rem", border: 'solid 1px white', padding: "10px", marginTop: 5, color: "red" }} */
+
+.customer {
+  font-size: 2rem;
+  border: solid 1px white;
+  padding: 10px;
+  margin-top: 5px;
+  color: aqua;
+}
+
+/* style={{ fontSize: "2rem", marginTop: 20 }} */
+.text {
+  font-size: 2rem;
+  margin-top: 20px;
+}

@@ -39,14 +39,12 @@ function App() {
         {customers.length > 0 ?
           <div>
             {customers
-              .map(customer => <div key={customer.id} onClick={() => removeCustomer(customer)}
-                style={{ fontSize: "2rem", border: 'solid 1px white', padding: "10px", marginTop: 5, color: "red" }} >
+              .map(customer => <div key={customer.id} onClick={() => removeCustomer(customer)} className="customer">
                 {customer.name}
               </div>)}
           </div>
           :
-          <div style={{ fontSize: "2rem", marginTop: 20 }}>
-            no clients found!</div>
+          <div className="text">no clients found!</div>
         }
       </main >
     </div >
